@@ -1,0 +1,197 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Responsive font */
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Header styles */
+.header {
+    background: #f0f8ff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flexbox;
+    flex-direction: column;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: #4169e1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav-item {
+    padding: 0.5rem 0;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+}
+
+/* Main content */
+.main-content {
+    padding: 1rem;
+}
+
+.approval-section {
+    margin-bottom: 2rem;
+}
+
+/* Equipment card */
+.equipment-card {
+    background-color: rgba(245, 243, 243, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.equipment-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: #000000 1px solid;
+}
+
+.equipment-details {
+    flex: 1;
+}
+
+.equipment-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.equipment-info {
+    margin-bottom: 0.3rem;
+    color: #666;
+    color: black;
+}
+
+/* Button styles */
+.button-group {
+    display: flexbox;
+    gap: 0.5rem;
+    justify-content: space-between;
+    margin-top: 9rem;
+}
+
+.button-group-2 {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    margin-left: 104rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-approve {
+    background: #98e1d6;
+    color: #333;
+}
+
+.btn-reject {
+    background: #ffc0cb;
+    color: #333;
+}
+
+/* Checkbox */
+.select-checkbox {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .equipment-card {
+        flex-direction: row;
+    }
+
+    .equipment-image {
+        width: 200px;
+        height: 150px;
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .equipment-card {
+        flex-direction: column;
+    }
+
+    .equipment-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .button-group-2 {
+        flex-direction: column;
+        margin-left: 0;
+    }
+}

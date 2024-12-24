@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>อนุมัติคำสั่งซื้อ/เช่า</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="img/logo.jpg" alt="" class="logo">
+            <h1 href="ceo_home_page.html" style="font-family: Itim;">CEO - HOME</h1>
+        </div>
+        <nav class="nav" style="margin-left: 20%;">
+            <a href="#" class="nav-item active">อนุมัติคำสั่งซื้อ/เช่า</a>
+            <a href="#" class="nav-item">อนุมัติเคลม</a>
+            <a href="#" class="nav-item">สรุปยอดขาย</a>
+            <a href="#" class="nav-item">รายงานสภาพรถ</a>
+            <a href="#" class="nav-item">รายงานเคส</a>
+            <a href="#" class="nav-item">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
+            <a href="#" class="nav-item">สถิติการใช้งานรถ</a>
+        </nav>
+    </header>
+    <br>
+
+    <select name="option" style="margin-left: 2%;" onchange="location = this.value;">
+        <option value="approve_page.html">อนุมัติคำสั่งซื้อ</option>
+        <option value="approve_hire_page.html" selected>อนุมัติการเช่า</option>
+    </select>
+
+    <main class="main-content">
+        <section class="approval-section">
+            <div class="equipment-card">
+                <input type="checkbox" class="select-checkbox">
+                <img src="img/o_1hn2oukpa1qdf16nr1nk3vk5bfgb.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า" class="equipment-image">
+                <div class="equipment-details">
+                    <h2 class="equipment-title">เตียงผู้ป่วยแบบไฟฟ้า</h2>
+                    <p class="equipment-info">ชื่อผู้ซื้อ : นายศูนย์รถ โบ้งบาง</p>
+                    <p class="equipment-info">จำนวน : 2</p>
+                    <p class="equipment-info">ระยะเวลาการเช่า : วันที่ 1 ธันวาคม 2024 ถึง วันที่ 1 มกราคม 2025 </p>
+                    <p class="equipment-info">ค่ามัดจำ : 70,000 บาท</p>
+                </div>
+                <div class="button-group">
+                    <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติ</button>
+                    <button class="btn btn-reject">ไม่อนุมัติ</button>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <input type="checkbox" class="select-checkbox">
+                <img src="img/original-1689327506685.png" alt="ถังแก๊สออกซิเจน" class="equipment-image">
+                <div class="equipment-details">
+                    <h2 class="equipment-title">ถังแก๊สออกซิเจน</h2>
+                    <p class="equipment-info">ชื่อผู้เช่า : นายศูนย์รถ โบ้งบาง</p>
+                    <p class="equipment-info">จำนวน : 2</p>
+                    <p class="equipment-info">ระยะเวลาการเช่า : วันที่ 24 ธันวาคม 2024 ถึง วันที่ 1 มกราคม 2025 </p>
+                    <p class="equipment-info">ค่ามัดจำ : 9,000 บาท</p>
+                </div>
+                <div class="button-group">
+                    <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติ</button>
+                    <button class="btn btn-reject">ไม่อนุมัติ</button>
+                </div>
+            </div>
+        </section>
+        <div class="button-group-2">
+            <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติที่เลือก</button>
+            <button class="btn btn-reject">ไม่อนุมัติ</button>
+        </div>
+    </main>
+</body>
+
+</html>
