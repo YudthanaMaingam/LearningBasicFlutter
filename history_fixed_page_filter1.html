@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>ประวัติการส่งซ่อมรถและอุปกรณ์ทางการแพทย์</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="img/logo.jpg" alt="" class="logo">
+            <h1 href="ceo_home_page.html" style="font-family: Itim;">CEO - HOME</h1>
+        </div>
+        <nav class="nav" style="margin-left: 20%;">
+            <a href="approve_page.html" class="nav-item">อนุมัติคำสั่งซื้อ/เช่า</a>
+            <a href="#" class="nav-item">อนุมัติเคลม</a>
+            <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
+            <a href="car_report_page.html" class="nav-item">รายงานสภาพรถ</a>
+            <a href="case_report_page.html" class="nav-item">รายงานเคส</a>
+            <a href="history_fixed_page.html" class="nav-item  active">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
+            <a href="static_car_page.html" class="nav-item">สถิติการใช้งานรถ</a>
+        </nav>
+    </header>
+    <br>
+
+    <select class="select-month-his" name="" style="margin-left: 77%;">
+        <option value="">เดือน</option>
+        <option value="" selected>มกราคม</option>
+        <option value="">กุมภาพันธ์</option>
+        <option value="">มีนาคม</option>
+        <option value="">เมษายน</option>
+        <option value="">พฤษภาคม</option>
+        <option value="">มิถุนายน</option>
+        <option value="">กรกฎาคม</option>
+        <option value="">สิงหาคม</option>
+        <option value="">กันยายน</option>
+        <option value="">ตุลาคม</option>
+        <option value="">พฤศจิกายน</option>
+        <option value="">ธันวาคม</option>
+    </select>
+
+    <select class="select-year-his" name="" style="margin-left: 0%;">
+        <option value="">ปี</option>
+        <option value="">2024</option>
+        <option value="">2023</option>
+        <option value="">2022</option>
+        <option value="">2021</option>
+        <option value="">2020</option>
+        <option value="">2019</option>
+        <option value="" selected>2018</option>
+        <option value="">2017</option>
+        <option value="">2016</option>
+        <option value="">2015</option>
+    </select>
+
+    <div class="header-his" style="margin-top:1rem">
+        <h1 style="margin-left: 2rem;">รถพยาบาล</h1>
+    </div>
+    <main class="main-content">
+        <section class="approval-section">
+            <div class="equipment-card-his">
+                <div class="equipment-details">
+                    <img src="img/van-ambulance-vehicle-emergency-medical-services-toyota-commuter-abl-commu-alsv-wang-saphung-hospital-loei-carryboy.jpg" alt="" class="equipment-img-his">
+                    <br>
+                    <h2 class="equipment-title" style="display:inline-block">ระดับรถ</h2>
+                    <select class="select-level-his" name="option" style="margin-left: 2%;">
+                        <option value="">เลือกระดับรถ</option>
+                        <option value="" selected>Level 1</option>
+                        <option value="">Level 2</option>
+                        <option value="">Level 3</option>
+                    </select>
+                    <br>
+                    <h2 class="equipment-title" style="display:inline-block;">ทะเบียน</h2>
+                    <select class="select-plate-his" name="option" style="margin-left: 2%;">
+                        <option value="">เลือกทะเบียน</option>
+                        <option value="">บล 1234 พิษณุโลก</option>
+                        <option value="" selected>ฟห 567 พิษณุโลก</option>
+                        <option value="">พฉ 789 พิษณุโลก</option>
+                    </select>
+                    <h4 style="color:rgb(180, 4, 4);">หมายเหตุ : สายเบรคขาด, หลอดไฟแตก</h4>
+                </div>
+
+            </div>
+
+            <div class="header-his" style="margin-top:1rem">
+                <h1 style="margin-left: 1rem; margin-bottom: 1rem;">อุปกรณ์ทางการแพทย์</h1>
+            </div>
+            <section class="approval-section">
+                <div class="equipment-card-his">
+                    <div class="equipment-details">
+                        <img src="img/o_1hn2oukpa1qdf16nr1nk3vk5bfgb.jpg" alt="" class="equipment-img-his">
+                        <br>
+                        <h2 class="equipment-title" style="display:inline-block;">ประเภทอุปกรณ์</h2>
+                        <select class="select-plate-his" name="option" style="margin-left: 2%;">
+                            <option value="">เลือกประเภท</option>
+                            <option value="" selected>ประเภทที่ 1</option>
+                            <option value="">ประเภทที่ 2</option>
+                            <option value="">ประเภทที่ 3</option>
+                        </select>
+                        <br>
+                        <h2 class="equipment-title" style="display:inline-block;">ชื่ออุปกรณ์</h2>
+                        <select class="select-plate-his" name="option" style="margin-left: 4%;">
+                            <option value="">เลือกอุปกรณ์</option>
+                            <option value="" selected>เตียงผู้ป่วยไฟฟ้า</option>
+                            <option value="">อุปกรณ์ 2</option>
+                            <option value="">อุปกรณ์ 3</option>
+                        </select>
+                        <h4 style="color:rgb(180, 4, 4);">หมายเหตุ : ชำรุด</h4>
+                    </div>
+                </div>
+
+                <div class="button-group-2">
+                    <button class="btn btn-approve">ยืนยัน</button>
+                    <button class="btn btn-reject"><a class="link-reset-btn" href="history_fixed_page.html">รีเซ็ต</a></button>
+                </div>
+            </section>
+    </main>
+</body>
+
+</html>

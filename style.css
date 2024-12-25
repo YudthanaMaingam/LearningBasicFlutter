@@ -127,6 +127,64 @@ body {
     background-color: rgba(245, 243, 243, 1);
 }
 
+.select-level-his{
+    font-weight: regular;
+    font-size: large;
+    width: 10%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 2px solid rgba(190, 219, 235, 1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+    background-color: rgba(190, 219, 235, 1);
+}
+
+.select-plate-his{
+    font-weight: regular;
+    font-size: large;
+    width: 10%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 2px solid rgba(190, 219, 235, 1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+    background-color: rgba(190, 219, 235, 1);
+}
+
+.select-month-his{
+    font-weight: regular;
+    font-size: large;
+    display:inline-block;
+    margin-left: 13rem;
+    width: 10%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid rgba(190, 219, 235, 1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+    background-color: rgba(190, 219, 235, 1);
+    position: flex;
+}
+
+.select-year-his{
+    font-weight: regular;
+    font-size: large;
+    width: 10%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 2px solid rgba(190, 219, 235, 1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+    background-color: rgba(190, 219, 235, 1);
+}
+
 .select-case-type{
     font-weight: regular;
     font-size: 15px;
@@ -329,6 +387,17 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.equipment-card-his {
+    background-color: rgba(246, 246, 246, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+}
+
 .equipment-card-car-report {
     background-color: rgba(245, 243, 243, 1);
     display: flex;
@@ -404,6 +473,14 @@ body {
 
 .equipment-image {
     width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: #000000 1px solid;
+}
+
+.equipment-img-his {
+    width: 20%;
     height: auto;
     object-fit: cover;
     margin-bottom: 1rem;
