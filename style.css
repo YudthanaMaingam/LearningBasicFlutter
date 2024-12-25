@@ -60,29 +60,33 @@ body {
     font-size: large;
 }
 
-.btn-search-summary{
-    background: #98e1d6;
-    color: #000000;
-    margin-bottom: 5%;
-    margin-left: 3rem;
-    width: 5rem;
-    height: 3rem;
-    font-size: large;
-    margin-left: 28rem;
+/* ให้ปุ่มมีความกว้างที่ responsive */
+.btnv2 {
+    width: 50%; /* ปุ่มขยายเต็มความกว้างของ parent */
+    max-width: 200px; /* กำหนดความกว้างสูงสุด */
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.btn-search-summary {
+    background-color: #87d3c4;
+    color: rgb(0, 0, 0);
+}
+
+.btn-reset-summary {
+    background-color: #fcb1b1;
+    color: rgb(0, 0, 0);
 }
 
 .btn-reset{
     background: #ffc0cb;
     color: #000000;
     margin-bottom: 5%;
-    width: 5rem;
-    height: 3rem;
-    font-size: large;
-}
-
-.btn-reset-summary{
-    background: #ffc0cb;
-    color: #000000;
     width: 5rem;
     height: 3rem;
     font-size: large;
@@ -429,6 +433,9 @@ body {
         width: 200px;
         height: 150px;
         margin-right: 2rem;
+    }
+    .btnv2 {
+        width: 10%; /* ให้ปุ่มใช้ความกว้างเต็มที่ในหน้าจอขนาดเล็ก */
     }
 }
 
