@@ -12,6 +12,27 @@ body {
     line-height: 1.5;
 }
 
+
+.equipment-info-status-ready{
+    font-size: 15px;
+    font-weight: bold;
+    width: 16%;
+    display: flex;
+    color: rgb(4, 155, 24);
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+.equipment-info-status-notready{
+    font-size: 15px;
+    font-weight: bold;
+    width: 17%;
+    display: flex;
+    color: rgb(180, 4, 4);
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
 .label-text-summary-services, .label-text-summary-equipment{
     font-size: large;
     font-weight: bold;
@@ -51,7 +72,7 @@ body {
 
 
 .btn-search{
-    background: #98e1d6;
+    background: rgba(159, 228, 222, 1);
     color: #000000;
     margin-bottom: 5%;
     margin-left: 3rem;
@@ -74,17 +95,17 @@ body {
 }
 
 .btn-search-summary {
-    background-color: #87d3c4;
+    background-color: rgba(159, 228, 222, 1);
     color: rgb(0, 0, 0);
 }
 
 .btn-reset-summary {
-    background-color: #fcb1b1;
+    background-color: rgba(255, 184, 152, 1);
     color: rgb(0, 0, 0);
 }
 
 .btn-reset{
-    background: #ffc0cb;
+    background: rgba(255, 184, 152, 1);
     color: #000000;
     margin-bottom: 5%;
     width: 5rem;
@@ -308,6 +329,20 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.equipment-card-car-report {
+    background-color: rgba(245, 243, 243, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    width: 60%;
+    margin-left: 19rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .equipment-card-static-car {
     background-color: rgba(246, 233, 224, 1);
     display: flex;
@@ -334,6 +369,21 @@ body {
     position: relative;
     width: 60%;
     height: 15rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.equipment-card-case_report {
+    background-color: rgba(246, 233, 224, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 15rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    width: 60%;
+    height: 11rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -364,15 +414,29 @@ body {
     flex: 1;
 }
 
-.equipment-title {
+.equipment-title{
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
+.equipment-title-car-report {
+    display:flex;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 14rem;
+    margin-top: -10rem;
+}
 
-.equipment-info {
+.equipment-info, .equipment-info-car-report {
     margin-bottom: 0.3rem;
     color: #666;
     color: black;
+}
+.equipment-info-car-report {
+    display: flex;
+    margin-bottom: 0.3rem;
+    color: #666;
+    color: black;
+    margin-left: 14rem;
 }
 
 /* Button styles */
@@ -397,12 +461,12 @@ body {
 }
 
 .btn-approve {
-    background: #98e1d6;
+    background: rgba(159, 228, 222, 1);
     color: #333;
 }
 
 .btn-reject {
-    background: #ffc0cb;
+    background: rgba(255, 184, 152, 1);
     color: #333;
 }
 

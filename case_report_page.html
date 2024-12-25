@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    <title>อนุมัติคำสั่งซื้อ/เช่า</title>
+    <title>สรุปยอดขาย</title>
 </head>
 
 <body>
@@ -27,23 +27,23 @@
             <a href="static_car_page.html" class="nav-item">สถิติการใช้งานรถ</a>
         </nav>
     </header>
-    <br>
 
     <main class="main-content">
         <section class="approval-section">
-            <div class="equipment-card-static-car">
+            <div class="equipment-card-case_report">
                 <div class="equipment-details">
 
-                    <label class="label-text">ประเภทงาน :</label>
-                    <select class="select-case-type" name="" id="">
-                        <option value="" selected>กรุณาเลือกประเภทเคส</option>
-                        <option value="EVENT">EVENT</option>
-                        <option value="Referral">รับส่งผู้ป่วย</option>
-                        <option value="EmergencyCase">รับเคสฉุกเฉิน</option>
-                    </select>
-                    <label class="label-text">เดือน :</label>
-                    <select class="select-month" name="" id="">
-                        <option value="" selected>กรุณาเลือกเดือน</option>
+                    <input type="checkbox" class="checkbox-summary-services">
+                    <label class="label-text-summary-services">เคสฉุกเฉิน</label>
+
+                    <input type="checkbox" class="checkbox-summary-services">
+                    <label class="label-text-summary-services">เคสรับส่งผู้ป่วย</label>
+
+                    <input type="checkbox" class="checkbox-summary-services">
+                    <label class="label-text-summary-services">EVENT</label>
+
+                    <select class="select-month-summary" name="" id="">
+                        <option value="" selected>เดือน</option>
                         <option value="">มกราคม</option>
                         <option value="">กุมภาพันธ์</option>
                         <option value="">มีนาคม</option>
@@ -58,9 +58,9 @@
                         <option value="">ธันวาคม</option>
                         <option value="">ทุกเดือน</option>
                     </select>
-                    <label class="label-text">ปี :</label>
-                    <select class="select-year" name="" id="">
-                        <option value="" selected>กรุณาเลือกปี (ค.ศ)</option>
+
+                    <select class="select-year-summary" name="" id="">
+                        <option value="" selected>ปี (ค.ศ)</option>
                         <option value="">2024</option>
                         <option value="">2023</option>
                         <option value="">2022</option>
@@ -72,11 +72,32 @@
                         <option value="">2016</option>
                         <option value="">2015</option>
                     </select>
-                    <button type="submit" class="btn btn-search" > <a class="link-search-btn" href="static_car_page_filter1.html">ค้นหา</a> </button>
-                    <button type="reset" class="btn btn-reset">รีเซ็ต</button>
+
+                    <select class="select-province-summary" name="" id="">
+                        <option value="" selected>โรค</option>
+                        <option value="">โรคความดันโลหิตสูง</option>
+                        <option value="">โรคหลอดเลือดสมอง</option>
+                        <option value="">หลอดเลือดหัวใจตีบตัน</option>
+                        <option value="">โรคกระเพาะอาหาร</option>
+                        <option value="">มะเร็งตับ</option>
+                        <option value="">เบาหวาน</option>
+                        <option value="">โรคถุงลมโป่งพอง</option>
+                    </select>
+
+                    <select class="select-province-summary" name="" id="">
+                        <option value="" selected>การแพ้ยา</option>
+                        <option value="">แพ้</option>
+                        <option value="">ไม่แพ้</option>
+                    </select>
+                    <button type="submit" class="btnv2 btn-search-summary"> <a class="link-search-btn" href="summary_page_filter1.html">ค้นหา</a></button>
+                    <button type="reset" class="btnv2 btn-reset-summary">รีเซ็ต</button>
                 </div>
+
+            </div>
         </section>
     </main>
+    </main>
+
 </body>
 
 </html>
