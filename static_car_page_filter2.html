@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>อนุมัติคำสั่งซื้อ/เช่า</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="img/logo.jpg" alt="" class="logo">
+            <h1 href="ceo_home_page.html" style="font-family: Itim;">CEO - HOME</h1>
+        </div>
+        <nav class="nav" style="margin-left: 20%;">
+            <a href="approve_page.html" class="nav-item">อนุมัติคำสั่งซื้อ/เช่า</a>
+            <a href="#" class="nav-item">อนุมัติเคลม</a>
+            <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
+            <a href="#" class="nav-item">รายงานสภาพรถ</a>
+            <a href="#" class="nav-item">รายงานเคส</a>
+            <a href="#" class="nav-item">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
+            <a href="static_car_page.html" class="nav-item active">สถิติการใช้งานรถ</a>
+        </nav>
+    </header>
+    <br>
+
+    <main class="main-content">
+        <section class="approval-section">
+            <div class="equipment-card-static-car">
+                <div class="equipment-details">
+
+                    <label class="label-text">ประเภทงาน :</label>
+                    <select class="select-case-type" name="" id="">
+                        <option value="">กรุณาเลือกประเภทเคส</option>
+                        <option value="EVENT" selected>EVENT</option>
+                        <option value="Referral">รับส่งผู้ป่วย</option>
+                        <option value="EmergencyCase">รับเคสฉุกเฉิน</option>
+                    </select>
+                    <label class="label-text">เดือน :</label>
+                    <select class="select-month" name="" id="">
+                        <option value="" selected>กรุณาเลือกเดือน</option>
+                        <option value="">มกราคม</option>
+                        <option value="">กุมภาพันธ์</option>
+                        <option value="">มีนาคม</option>
+                        <option value="">เมษายน</option>
+                        <option value="">พฤษภาคม</option>
+                        <option value="">มิถุนายน</option>
+                        <option value="">กรกฎาคม</option>
+                        <option value="">สิงหาคม</option>
+                        <option value="">กันยายน</option>
+                        <option value="">ตุลาคม</option>
+                        <option value="">พฤศจิกายน</option>
+                        <option value="">ธันวาคม</option>
+                        <option value="" selected>ทุกเดือน</option>
+                    </select>
+                    <label class="label-text">ปี :</label>
+                    <select class="select-year" name="" id="">
+                        <option value="">กรุณาเลือกปี (ค.ศ)</option>
+                        <option value="">2024</option>
+                        <option value="">2023</option>
+                        <option value="">2022</option>
+                        <option value="">2021</option>
+                        <option value="">2020</option>
+                        <option value="">2019</option>
+                        <option value="">2018</option>
+                        <option value="">2017</option>
+                        <option value="">2016</option>
+                        <option value="" selected>2015</option>
+                    </select>
+                    <button type="submit" class="btn btn-search">ค้นหา</button>
+                    <button type="reset" class="btn btn-reset"><a class="link-reset-btn" href="static_car_page.html"> รีเซ็ต </a></button>
+                </div>
+        </section>
+
+        <div class="bar-chart-card">
+            <div class="header-staic-car">
+                <h2 style="text-align: center;">สถิตการใช้รถ</h2>
+                <h3 style="text-align: center;" >ในเคส : EVENT เดือน : ทุกเดือน ปี : 2015</h3>
+            </div>
+            <br>
+            <section class="chart-section">
+                <canvas id="usageChart" width="400" height="200"></canvas>
+            </section>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                const ctx = document.getElementById('usageChart').getContext('2d');
+                const usageChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
+                        datasets: [
+                            {
+                                label: 'รถ Level 1',
+                                data: [33, 20, 50, 40, 60, 70, 80, 90, 100, 50, 40, 30],
+                                backgroundColor: 'rgba(129, 179, 210, 1)',
+                                borderColor: 'rgba(129, 179, 210, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'รถ Level 2',
+                                data: [40, 30, 60, 50, 70, 80, 90, 100, 110, 60, 50, 40],
+                                backgroundColor: 'rgba(159, 228, 222, 1)',
+                                borderColor: 'rgba(159, 228, 222, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'รถ Level 3',
+                                data: [50, 40, 70, 60, 80, 90, 100, 110, 120, 70, 60, 50],
+                                backgroundColor: 'rgba(255, 184, 152, 1)',
+                                borderColor: 'rgba(255, 184, 152, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 120,
+                                ticks: {
+                                    callback: function (value) {
+                                        return value + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+
+    </main>
+</body>
+
+</html>

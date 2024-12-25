@@ -33,37 +33,37 @@
             <div class="equipment-card-summary">
                 <div class="equipment-details">
 
-                    <input type="checkbox" class="checkbox-summary-services">
+                    <input type="checkbox" class="checkbox-summary-services" checked>
                     <label class="label-text-summary-services">บริการรถฉุกเฉิน :</label>
                     <select class="select-summary-case" name="" id="">
-                        <option value="" selected>กรุณาเลือกบริการ</option>
+                        <option value="">กรุณาเลือกบริการ</option>
                         <option value="EVENT">EVENT</option>
                         <option value="Referral">รับส่งผู้ป่วย</option>
                         <option value="EmergencyCase">รับเคสฉุกเฉิน</option>
-                        <option value="AllServices">ทุกบริการ</option>
+                        <option value="AllServices" selected>ทุกบริการ</option>
                     </select>
 
                     <select class="select-summary-car" name="" id="">
-                        <option value="" selected>กรุณาเลือกระดับรถ</option>
+                        <option value="">กรุณาเลือกระดับรถ</option>
                         <option value="">Level 1</option>
                         <option value="">Level 2</option>
                         <option value="">Level 3</option>
-                        <option value="">ทุกระดับ</option>
+                        <option value="" selected>ทุกระดับ</option>
                     </select>
 
-                    <input type="checkbox" class="checkbox-summary-equipment">
+                    <input type="checkbox" class="checkbox-summary-equipment" checked>
                     <label class="label-text-summary-equipment">อุปกรณ์ทางการแพทย์ :</label>
                     <select class="select-summary-equipment-type" name="" id="">
-                        <option value="" selected>กรุณาเลือกประเภท</option>
+                        <option value="">กรุณาเลือกประเภท</option>
                         <option value="">ประเภทที่ 1</option>
                         <option value="">ประเภทที่ 2</option>
                         <option value="">ประเภทที่ 3</option>
-                        <option value="">ทุกประเภท</option>
+                        <option value="" selected>ทุกประเภท</option>
                     </select>
 
 
                     <select class="select-month-summary" name="" id="">
-                        <option value="" selected>เดือน</option>
+                        <option value="">เดือน</option>
                         <option value="">มกราคม</option>
                         <option value="">กุมภาพันธ์</option>
                         <option value="">มีนาคม</option>
@@ -76,14 +76,14 @@
                         <option value="">ตุลาคม</option>
                         <option value="">พฤศจิกายน</option>
                         <option value="">ธันวาคม</option>
-                        <option value="">ทุกเดือน</option>
+                        <option value="" selected>ทุกเดือน</option>
                     </select>
 
                     <select class="select-year-summary" name="" id="">
-                        <option value="" selected>ปี (ค.ศ)</option>
+                        <option value="">ปี (ค.ศ)</option>
                         <option value="">2024</option>
                         <option value="">2023</option>
-                        <option value="">2022</option>
+                        <option value="" selected>2022</option>
                         <option value="">2021</option>
                         <option value="">2020</option>
                         <option value="">2019</option>
@@ -94,7 +94,7 @@
                     </select>
 
                     <select class="select-province-summary" name="" id="">
-                        <option value="" selected>จังหวัด</option>
+                        <option value="">จังหวัด</option>
                         <option value="">กระบี่</option>
                         <option value="">กรุงเทพมหานคร</option>
                         <option value="">กาญจนบุรี</option>
@@ -105,15 +105,63 @@
                         <option value="">ฉะเชิงเทรา</option>
                         <option value="">ชลบุรี</option>
                         <option value="">ชัยนาท</option>
-                        <option value="">ทุกจังหวัด</option>
+                        <option value="" selected>ทุกจังหวัด</option>
                     </select>
 
-                    <button type="submit" class="btn btn-search-summary"> <a class="link-search-btn" href="summary_page_filter1.html">ค้นหา</a>
+                    <button type="submit" class="btn btn-search-summary"> <a class="link-search-btn" href="#">ค้นหา</a>
                     </button>
-                    <button type="reset" class="btn btn-reset-summary">รีเซ็ต</button>
+                    <button type="reset" class="btn btn-reset-summary"><a class="link-search-btn" href="summary_page.html">รีเซ็ต</a></button>
                 </div>
             </div>
         </section>
+
+        <div class="bar-chart-card">
+            <div class="header-staic-car">
+                <h2 style="text-align: center;">สรุปยอดขาย</h2>
+                <h3 style="text-align: center;">บริการรถฉุกเฉิน : ทุกบริการ และอุปกรณ์ทางการแพทย์ : ทุกประเภท เดือน : ทุกเดือน ปี : 2022 จังหวัด : ทุกจังหวัด</h3>
+            </div>
+            <br>
+            <div class="chart-container"></div>
+            <canvas id="revenueChart"></canvas>
+        </div>
+
+        <section class="chart-section">
+            <canvas id="usageChart" width="400" height="200"></canvas>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            const revenueChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
+                    datasets: [
+                        {
+                            label: 'บริการรถฉุกเฉิน',
+                            data: [12000, 15000, 18000, 20000, 22000, 25000, 27000, 30000, 32000, 35000, 37000, 40000],
+                            backgroundColor: 'rgba(129, 179, 210, 1)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'อุปกรณ์ทางการแพทย์',
+                            data: [10000, 13000, 16000, 19000, 21000, 24000, 26000, 29000, 31000, 34000, 36000, 39000],
+                            backgroundColor: 'rgba(255, 184, 152, 1)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
     </div>
     </main>
 
