@@ -55,35 +55,30 @@
                 <input class="calendar-selected" id="calendarSelect" type="text" placeholder="เลือกวันที่"> ถึง
                 <input class="calendar-selected" id="calendarSelect" type="text" placeholder="เลือกวันที่">
 
-                <label for="">ระดับรถ:</label>
+                <label for="">ประเภท:</label>
                 <select id="" class="filter-select">
                     <option value="" selected hidden>ทั้งหมด</option>
-                    <option value="">Level 1</option>
-                    <option value="">Level 2</option>
-                    <option value="">Level 3</option>
+                    <option value="fist">อุปกรณ์วัดและตรวจสุขภาพ</option>
+                    <option value="basic">อุปกรณ์ช่วยการเคลื่อนไหว</option>
+                    <option value="basic">อุปกรณ์สำหรับการฟื้นฟูและกายภาพบำบัด</option>
+                    <option value="basic">อุปกรณ์ดูแลสุขอนามัย</option>
+                    <option value="basic">อุปกรณ์ช่วยหายใจและระบบทางเดินหายใจ</option>
+                    <option value="basic">อุปกรณ์ปฐมพยาบาล</option>
                 </select>
 
-                <label for="">สถานะรถ:</label>
-                <select id="" class="filter-select">
-                    <option value="" selected hidden>เลือกสถานะรถ</option>
-                    <option value="">ซ่อมแล้ว</option>
-                    <option value="">ยังไม่ซ่อม</option>
+                <label for="filter-price">สถานะ:</label>
+                <select id="filter-price-list" class="filter-select">
+                    <option value="" selected hidden>เลือกสถานะอุปกรณ์</option>
+                    <option value="fist">ซ่อมแล้ว</option>
+                    <option value="basic">ยังไม่ซ่อม</option>
                 </select>
 
-                <label for="">สถานะการซ่อม:</label>
-                <select id="" class="filter-select">
-                    <option value="" selected hidden>สถานะการซ่อม</option>
-                    <option value="">รอการตรวจสอบ</option>
-                    <option value="">ต้องรออะไหล่</option>
-                    <option value="">ยกเลิกการซ่อม</option>
-                </select>
-
-                <label for="">ความเร่งด่วน:</label>
-                <select id="" class="filter-select">
-                    <option value="" selected hidden>ความเร่งด่วน</option>
-                    <option value="">เร่งด่วนมาก</option>
-                    <option value="">เร่งด่วนปานกลาง</option>
-                    <option value="">ไม่เร่งด่วน</option>
+                <label for="filter-price">สาเหตุ:</label>
+                <select id="filter-price-list" class="filter-select">
+                    <option value="" selected hidden>เลือกสาเหตุ</option>
+                    <option value="fist">ล้อหลุด</option>
+                    <option value="basic">พี่พักเท้าชำรุด</option>
+                    <option value="basic">อื่นๆ</option>
                 </select>
 
                 <label for="">ค่าใช้จ่าย:</label>
@@ -108,39 +103,35 @@
         </div>
 
     </div>
-    <select class="select" name="option" style="margin-left: 17%;" onchange="location = this.value;">
-        <option value="history_fixed_page.html" selected>รถพยาบาล</option>
-        <option value="history_fixed_page_2.html">อุปกรณ์ทางการแพทย์</option>
+    <select class="select" name="option" style="margin-left: 17%; width: 11%;" onchange="location = this.value;">
+        <option value="history_fixed_page.html">รถพยาบาล</option>
+        <option value="history_fixed_page_2.html" selected>อุปกรณ์ทางการแพทย์</option>
     </select>
 
     <main class="main-content">
         <section class="approval-section">
             <div class="equipment-card-car-report">
-                <img src="img/van-ambulance-vehicle-emergency-medical-services-toyota-commuter-abl-commu-alsv-wang-saphung-hospital-loei-carryboy.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า" class="equipment-image">
+                <img src="img/hillrom-type-c-01.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า" class="equipment-image">
                 <div class="equipment-details-car-report">
-                    <h2 class="equipment-title-car-report">ทะเบียนรถ : กขค 372</h2>
-                    <p class="equipment-info-car-report">ระดับรถ : Level 3</p>
+                    <h2 class="equipment-title-car-report">เตียงผู้ป่วยไฟฟ้าปรับระดับ Hillrom Centuris Type C</h2>
                     <p class="equipment-info-car-report">บันทึกโดย : นายเปรี้ยว แซ่บ</p>
-                    <p class="equipment-info-car-report">อุปกรณ์ทางการแพทย์ในรถ : พร้อมใช้งาน</p>
                     <p class="equipment-info-car-report">วันที่บันทึก : วันที่ 12 มกราคม 2018 12:07 น.</p>
-                    <p class="equipment-info-car-report">ผ่านการซ่อมมาแล้ว : 3 ครั้ง</p>
-                    <p class="equipment-info-status-ready-his">สถานะรถ : พร้อมใช้งาน</p>
+                    <p class="equipment-info-car-report">ผ่านการซ่อมมาแล้ว : 1 ครั้ง</p>
+                    <p class="equipment-info-status-ready-his2">สถานะ : พร้อมใช้งาน</p>
                 </div>
             </div>
         </section>
 
         <section class="approval-section">
             <div class="equipment-card-car-report">
-                <img src="img/van-ambulance-vehicle-emergency-medical-services-toyota-commuter-abl-commu-alsv-wang-saphung-hospital-loei-carryboy.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า" class="equipment-image">
+                <img src="img/W-05.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า" class="equipment-image">
                 <div class="equipment-details-car-report">
-                    <h2 class="equipment-title-car-report">ทะเบียนรถ : ณน 879</h2>
-                    <p class="equipment-info-car-report">ระดับรถ : Level 1</p>
+                    <h2 class="equipment-title-car-report">รถเข็น ผู้ป่วย Hospro WHEELCHAIR รุ่น H-WC607</h2>
                     <p class="equipment-info-car-report">บันทึกโดย : นางกาแฟ ขมคอ</p>
-                    <p class="equipment-info-car-report">อุปกรณ์ทางการแพทย์ในรถ : พร้อมใช้งาน</p>
                     <p class="equipment-info-car-report">วันที่บันทึก : วันที่ 12 มกราคม 2018 13:07 น.</p>
-                    <p class="equipment-info-car-report">สาเหตุ : ยางรั่ว, มีกลิ่นอับ</p>
-                    <p class="equipment-info-car-report">ผ่านการซ่อมมาแล้ว : 0 ครั้ง</p>
-                    <p class="equipment-info-status-notready-his">สถานะรถ : ไม่พร้อมใช้งาน</p>
+                    <p class="equipment-info-car-report">สาเหตุ : ล้อหลุด, ที่พักเท้าชำรุด</p>
+                    <p class="equipment-info-car-report">ผ่านการซ่อมมาแล้ว : 2 ครั้ง</p>
+                    <p class="equipment-info-status-notready-his3">สถานะ : ไม่พร้อมใช้งาน</p>
                 </div>
             </div>
         </section>
@@ -171,7 +162,15 @@
             });
 
         });
+        // // สคริปต์สำหรับแสดงค่าของ Slider
+        // const slider = document.getElementById("priceRange");
+        // const value = document.getElementById("value");
 
+        // const updateValue = () => {
+        //     value.textContent = slider.value;
+        // }
+        // slider.oninput = updateValue;
+        // updateValue();
         // ตั้งค่าปฏิทิน Flatpickr
         flatpickr("#calendarSelect", {
             dateFormat: "Y-m-d",  // รูปแบบวันที่เป็น YYYY-MM-DD

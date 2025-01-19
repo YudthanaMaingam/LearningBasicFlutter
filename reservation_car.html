@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_car.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>จองคิวรถ</title>
+</head>
+
+<div class="top-navbar">
+    <nav class="nav-links">
+        <div><a href="contact.html">ติดต่อเรา</a></div>
+        <div class="dropdown">
+            <img src="image/user.png" alt="Logo" class="nav-logo">
+            <div class="dropdown-menu">
+                <a href="profile.html">โปรไฟล์</a>
+                <a href="order-history.html">ประวัติคำสั่งซื้อ</a>
+                <a href="claim.html">เคลมสินค้า</a>
+                <a href="logout.html">ออกจากระบบ</a>
+            </div>
+        </div>
+        <a href="index.html">
+            <img src="image/united-states-of-america.png" alt="Logo" class="nav-logo">
+        </a>
+    </nav>
+</div>
+
+<!-- Navbar ชั้นล่าง -->
+<div class="main-navbar">
+    <nav class="nav-links">
+        <div><a href="index.html">หน้าแรก</a></div>
+        <div><a href="reservation_car.html" style="color: #FFB898;">จองคิวรถ</a></div>
+        <a href="index.html">
+            <img src="image/Logo.png" alt="Logo" class="nav-logo1">
+        </a>
+        <div><a href="shopping.html">ซื้อ/เช่าอุปกรณ์ทางการแพทย์</a></div>
+    </nav>
+    <div class="cart-icon">
+        <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+    </div>
+</div>
+
+<div class="search-section">
+    <div class="search-container">
+        <input type="text" placeholder="ค้นหา..." class="search-input">
+        <button class="search-button">
+            <i class="fas fa-search"></i> <!-- ไอคอนแว่นขยาย -->
+        </button>
+    </div>
+    <div class="filter-icon">
+        <i class="fas fa-bars"></i> <!-- ไอคอน Filter -->
+    </div>
+</div>
+
+<!-- Sidebar -->
+<div class="filter-sidebar" id="filterSidebar">
+    <div class="sidebar-header">
+        <h2>ระบุความต้องการของคุณ</h2>
+        <button class="close-sidebar">&times;</button>
+    </div>
+    <div class="sidebar-content">
+        <label for="job-type">ประเภทงาน:</label>
+        <select id="job-type" class="filter-select">
+            <option value="" selected hidden>เลือกประเภท</option>
+            <option value="ambulance">จองคิวรถพยาบาล</option>
+            <option value="event">จองคิวงาน Event</option>
+        </select>
+        <label for="car-level">ระดับรถ:</label>
+        <select id="car-level" class="filter-select">
+            <option value="" selected hidden>เลือกระดับรถ</option>
+            <option value="fist">ระดับ 1</option>
+            <option value="basic">ระดับ 2</option>
+            <option value="advanced">ระดับ 3</option>
+        </select>
+    </div>
+</div>
+
+<body>
+    <!-- ปฏิทิน -->
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <div class="month-year-display">
+                <span id="selected-month">มกราคม</span>
+                <span id="selected-year">2567</span>
+            </div>
+            <button id="next-month">&gt;</button>
+        </div>
+        <table class="calendar-table">
+            <thead>
+                <tr>
+                    <th class="header-day">อา</th>
+                    <th class="header-day">จ</th>
+                    <th class="header-day">อ</th>
+                    <th class="header-day">พ</th>
+                    <th class="header-day">พฤ</th>
+                    <th class="header-day">ศ</th>
+                    <th class="header-day">ส</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                <!-- ตารางวันที่ -->
+            </tbody>
+        </table>
+
+        <!-- Modal สำหรับแสดงตารางเวลา -->
+        <div id="calendar-event-modal" class="event-modal">
+            <div class="event-modal-content">
+                <span class="close-event-modal">&times;</span>
+                <h2 id="modal-date-title">ตารางเวลา</h2>
+                <div class="checkbox">
+                    <input type="checkbox" id="ambulance" class="vehicle-checkbox"> จองสำหรับรับส่งผู้ป่วย
+                    <input type="checkbox" id="event" class="vehicle-checkbox"> จองสรับงาน Event
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="fist" class="first"> ระดับ 1
+                    <input type="checkbox" id="basic" class="basic"> ระดับ 2
+                    <input type="checkbox" id="advanced" class="advanced"> ระดับ 3
+                </div>
+
+
+                <div class="event-schedule">
+                    <div class="schedule-column">
+                        <div class="time-slot" data-time="08:00 - 09:00">08:00 - 09:00</div>
+                        <div class="time-slot" data-time="09:00 - 10:00">09:00 - 10:00</div>
+                        <div class="time-slot" data-time="10:00 - 11:00">10:00 - 11:00</div>
+                        <div class="time-slot" data-time="11:00 - 12:00">11:00 - 12:00</div>
+                        <div class="time-slot" data-time="12:00 - 13:00">12:00 - 13:00</div>
+                        <div class="time-slot" data-time="13:00 - 14:00">13:00 - 14:00</div>
+                        <div class="time-slot" data-time="14:00 - 15:00">14:00 - 15:00</div>
+                        <div class="time-slot" data-time="15:00 - 16:00">15:00 - 16:00</div>
+                    </div>
+                    <div class="schedule-column">
+                        <div class="time-slot" data-time="16:00 - 17:00">16:00 - 17:00</div>
+                        <div class="time-slot" data-time="17:00 - 18:00">17:00 - 18:00</div>
+                        <div class="time-slot" data-time="18:00 - 19:00">18:00 - 19:00</div>
+                        <div class="time-slot" data-time="19:00 - 20:00">19:00 - 20:00</div>
+                        <div class="time-slot" data-time="20:00 - 21:00">20:00 - 21:00</div>
+                        <div class="time-slot" data-time="21:00 - 22:00">21:00 - 22:00</div>
+                        <div class="time-slot" data-time="22:00 - 23:00">22:00 - 23:00</div>
+                        <div class="time-slot" data-time="23:00 - 00:00">23:00 - 00:00</div>
+                    </div>
+                </div>
+                <button id="confirm-selection" class="confirm-btn" style="display: none;">ยืนยัน</button>
+            </div>
+        </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const filterIcon = document.querySelector(".filter-icon");
+                const sidebar = document.getElementById("filterSidebar");
+                const closeSidebar = document.querySelector(".close-sidebar");
+
+                // เปิด Sidebar
+                filterIcon.addEventListener("click", () => {
+                    sidebar.classList.add("open");
+                });
+
+                // ปิด Sidebar
+                closeSidebar.addEventListener("click", () => {
+                    sidebar.classList.remove("open");
+                });
+
+                // ปิด Sidebar เมื่อคลิกนอก Sidebar
+                document.addEventListener("click", (e) => {
+                    if (!sidebar.contains(e.target) && !filterIcon.contains(e.target)) {
+                        sidebar.classList.remove("open");
+                    }
+                });
+
+                const calendarBody = document.getElementById("calendar-body");
+                const selectedMonth = document.getElementById("selected-month");
+                const selectedYear = document.getElementById("selected-year");
+                const prevMonthBtn = document.getElementById("prev-month");
+                const nextMonthBtn = document.getElementById("next-month");
+
+                const months = [
+                    "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม",
+                    "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+                ];
+
+                let currentDate = new Date();
+                let currentMonth = currentDate.getMonth();
+                let currentYear = currentDate.getFullYear();
+
+                function renderCalendar(month, year) {
+                    calendarBody.innerHTML = "";
+                    const firstDay = new Date(year, month).getDay();
+                    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                    let date = 1;
+
+                    for (let i = 0; i < 6; i++) {
+                        const row = document.createElement("tr");
+
+                        for (let j = 0; j < 7; j++) {
+                            const cell = document.createElement("td");
+
+                            if (i === 0 && j < firstDay) {
+                                cell.innerHTML = "";
+                            } else if (date > daysInMonth) {
+                                break;
+                            } else {
+                                const today = new Date();
+                                const isPastDate = new Date(year, month, date) < today.setHours(0, 0, 0, 0);
+
+                                cell.innerHTML = date;
+                                if (isPastDate) {
+                                    cell.classList.add("disabled");
+                                } else {
+                                    cell.addEventListener("click", () => {
+                                        document.querySelectorAll(".calendar-table td.active").forEach(td => {
+                                            td.classList.remove("active");
+                                        });
+                                        cell.classList.add("active");
+
+                                        // อัปเดต modal ให้แสดงตารางเวลา
+                                        const modal = document.getElementById("calendar-event-modal");
+                                        const modalTitle = document.getElementById("modal-date-title");
+                                        modalTitle.innerText = `ตารางเวลา วันที่ ${cell.innerText} ${months[month]} ${year + 543}`;
+                                        modal.style.display = "flex";
+
+                                        // รีเซ็ทการเลือกเวลาใน Modal
+                                        const timeSlots = document.querySelectorAll(".time-slot");
+                                        timeSlots.forEach(slot => {
+                                            slot.classList.remove("selected");
+                                        });
+
+                                        // ล้างการเลือกเวลาจากปุ่มยืนยัน
+                                        const confirmBtn = document.getElementById("confirm-selection");
+                                        confirmBtn.style.display = "none";
+
+                                        // เก็บวันที่ที่เลือก
+                                        const selectedDate = `${cell.innerText} ${months[month]} ${year + 543}`;
+                                        localStorage.setItem("selectedDate", selectedDate);
+                                    });
+                                }
+                                date++;
+                            }
+                            row.appendChild(cell);
+                        }
+                        calendarBody.appendChild(row);
+                    }
+
+                    selectedMonth.innerText = months[month];
+                    selectedYear.innerText = year + 543; // แปลงเป็นปี พ.ศ.
+                }
+
+                prevMonthBtn.addEventListener("click", () => {
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                });
+
+                nextMonthBtn.addEventListener("click", () => {
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                });
+
+                renderCalendar(currentMonth, currentYear);
+            });
+
+
+            // ปิด modal เมื่อคลิกปุ่มปิด
+            const closeModal = document.querySelector(".close-event-modal");
+            closeModal.addEventListener("click", () => {
+                document.getElementById("calendar-event-modal").style.display = "none";
+            });
+
+            // ปิด modal เมื่อคลิกข้างนอก modal
+            window.addEventListener("click", (e) => {
+                if (e.target == document.getElementById("calendar-event-modal")) {
+                    document.getElementById("calendar-event-modal").style.display = "none";
+                }
+            });
+
+            // เลือกหลายช่วงเวลา
+            document.querySelectorAll(".time-slot").forEach(slot => {
+                slot.addEventListener("click", () => {
+                    slot.classList.toggle("selected");
+
+                    // ถ้ามีการเลือกเวลาอย่างน้อย 1 ช่วง ให้แสดงปุ่มยืนยัน
+                    const selectedSlots = document.querySelectorAll(".time-slot.selected");
+                    const confirmBtn = document.getElementById("confirm-selection");
+                    if (selectedSlots.length > 0) {
+                        confirmBtn.style.display = "inline-block";
+                    } else {
+                        confirmBtn.style.display = "none";
+                    }
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const confirmBtn = document.getElementById("confirm-selection");
+                const ambulanceCheckbox = document.getElementById("ambulance");
+                const eventCheckbox = document.getElementById("event");
+
+                // ฟังก์ชันสำหรับตรวจสอบสถานะของ checkbox สำหรับระดับรถ
+                function checkLevelCheckboxes() {
+                    const level1Checkbox = document.getElementById("fist");
+                    const level2Checkbox = document.getElementById("basic");
+                    const level3Checkbox = document.getElementById("advanced");
+
+                    // ถ้ามีการเลือกระดับรถมากกว่า 1 ตัว ให้ยกเลิกการเลือก
+                    level1Checkbox.addEventListener("change", () => {
+                        if (level1Checkbox.checked) {
+                            level2Checkbox.checked = false;
+                            level3Checkbox.checked = false;
+                        }
+                    });
+
+                    level2Checkbox.addEventListener("change", () => {
+                        if (level2Checkbox.checked) {
+                            level1Checkbox.checked = false;
+                            level3Checkbox.checked = false;
+                        }
+                    });
+
+                    level3Checkbox.addEventListener("change", () => {
+                        if (level3Checkbox.checked) {
+                            level1Checkbox.checked = false;
+                            level2Checkbox.checked = false;
+                        }
+                    });
+                }
+
+                // ฟังก์ชันสำหรับตรวจสอบสถานะของ checkbox "ambulance" และ "event"
+                function checkCheckboxes() {
+                    // หากทั้งสอง checkbox ถูกเลือก ให้แสดงปุ่ม "ยืนยัน"
+                    if (ambulanceCheckbox.checked || eventCheckbox.checked) {
+                        confirmBtn.style.display = "inline-block"; // แสดงปุ่ม
+                    } else {
+                        confirmBtn.style.display = "none"; // ซ่อนปุ่ม
+                    }
+                }
+
+                // ฟังก์ชันที่จัดการกับการบันทึกสถานะของ checkbox ใน localStorage
+                function saveCheckboxState() {
+                    localStorage.setItem('ambulanceChecked', ambulanceCheckbox.checked);
+                    localStorage.setItem('eventChecked', eventCheckbox.checked);
+                    localStorage.setItem('level1Checked', document.getElementById("fist").checked);
+                    localStorage.setItem('level2Checked', document.getElementById("basic").checked);
+                    localStorage.setItem('level3Checked', document.getElementById("advanced").checked);
+                }
+
+                // ฟังก์ชันที่เรียกเมื่อโหลดหน้า
+                function loadCheckboxState() {
+                    const ambulanceState = localStorage.getItem('ambulanceChecked') === 'true';
+                    const eventState = localStorage.getItem('eventChecked') === 'true';
+                    const level1State = localStorage.getItem('level1Checked') === 'true';
+                    const level2State = localStorage.getItem('level2Checked') === 'true';
+                    const level3State = localStorage.getItem('level3Checked') === 'true';
+
+                    ambulanceCheckbox.checked = ambulanceState;
+                    eventCheckbox.checked = eventState;
+                    document.getElementById("fist").checked = level1State;
+                    document.getElementById("basic").checked = level2State;
+                    document.getElementById("advanced").checked = level3State;
+
+                    // ตรวจสอบสถานะ checkbox เมื่อโหลด
+                    checkCheckboxes();
+                }
+
+                // เรียกใช้ฟังก์ชันตรวจสอบการเลือก checkbox
+                checkLevelCheckboxes();
+
+                // เรียกใช้ฟังก์ชันตรวจสอบการเลือก checkbox อื่นๆ
+                loadCheckboxState();
+
+                // ฟังก์ชันเมื่อกดปุ่ม "ยืนยัน"
+                confirmBtn.addEventListener("click", () => {
+                    if (ambulanceCheckbox.checked) {
+                        // ถ้าเฉพาะ "จองคิวรถพยาบาล" ถูกเลือก
+                        window.location.href = "form_hospital.html"; // เปลี่ยนไปยังหน้า "จองคิวรถพยาบาล"
+                    } else if (eventCheckbox.checked) {
+                        // ถ้าเฉพาะ "จองคิวงาน Event" ถูกเลือก
+                        window.location.href = "form_event.html"; // เปลี่ยนไปยังหน้า "จองคิวงาน Event"
+                    }
+
+                    // หลังจากไปยังหน้าอื่นแล้ว ล้างค่าใน localStorage
+                    localStorage.removeItem('ambulanceChecked');
+                    localStorage.removeItem('eventChecked');
+                    localStorage.removeItem('level1Checked');
+                    localStorage.removeItem('level2Checked');
+                    localStorage.removeItem('level3Checked');
+                });
+
+                // ฟังก์ชันจัดการการเลือก checkbox "ambulance" และ "event" เพื่อให้เลือกได้แค่หนึ่ง
+                ambulanceCheckbox.addEventListener("change", () => {
+                    if (ambulanceCheckbox.checked) {
+                        eventCheckbox.checked = false;
+                    }
+                    checkCheckboxes();  // ตรวจสอบการเลือกปุ่ม
+                    saveCheckboxState();  // บันทึกสถานะ checkbox
+                });
+
+                eventCheckbox.addEventListener("change", () => {
+                    if (eventCheckbox.checked) {
+                        ambulanceCheckbox.checked = false;
+                    }
+                    checkCheckboxes();  // ตรวจสอบการเลือกปุ่ม
+                    saveCheckboxState();  // บันทึกสถานะ checkbox
+                });
+
+                // เรียกฟังก์ชันจัดเก็บข้อมูลเมื่อเลือก checkbox
+                ambulanceCheckbox.addEventListener("change", saveCheckboxState);
+                eventCheckbox.addEventListener("change", saveCheckboxState);
+                document.getElementById("fist").addEventListener("change", saveCheckboxState);
+                document.getElementById("basic").addEventListener("change", saveCheckboxState);
+                document.getElementById("advanced").addEventListener("change", saveCheckboxState);
+            });
+
+        </script>
+</body>
+
+</html>

@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>อนุมัติคำสั่งซื้อ/เช่า</title>
+    <title>อนุมัติเคลม</title>
 </head>
 
 <body>
@@ -20,8 +19,8 @@
             <h1 href="ceo_home_page.html" style="font-family: Itim;">CEO - HOME</h1>
         </div>
         <nav class="nav" style="margin-left: 20%;">
-            <a href="approve_page.html" class="nav-item active">อนุมัติคำสั่งซื้อ/เช่า</a>
-            <a href="#" class="nav-item">อนุมัติเคลม</a>
+            <a href="#" class="nav-item">อนุมัติคำสั่งซื้อ/เช่า</a>
+            <a href="#" class="nav-item active" >อนุมัติเคลม</a>
             <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
             <!-- <a href="car_report_page.html" class="nav-item">รายงานสภาพรถ</a> -->
             <a href="case_report_page.html" class="nav-item">รายงานเคส</a>
@@ -32,7 +31,6 @@
     <br>
 
     <div class="search-section">
-
         <div class="search-container">
             <input type="text" placeholder="ค้นหา..." class="search-input">
             <button class="search-button">
@@ -49,41 +47,52 @@
                 <button class="close-sidebar">&times;</button>
             </div>
             <div class="sidebar-content">
+                <input type="checkbox" id=""> เคลมสินค้า
+                <br>
+                <input type="checkbox" id=""> ต่ออายุการใช้งาน
+
                 <label for="filter-quantity">จำนวน:</label>
                 <select id="filter-quantity-list" class="filter-select">
                     <option value="" selected hidden>ทั้งหมด</option>
                     <option value="ambulance">น้อยสุด-มากสุด</option>
                     <option value="event">มากสุด-น้อยสุด</option>
                 </select>
-                <label for="filter-price">ราคา:</label>
-                <select id="filter-price-list" class="filter-select">
-                    <option value="" selected hidden>ราคา</option>
-                    <option value="fist">น้อยสุด-มากสุด</option>
-                    <option value="basic">มากสุด-น้อยสุด</option>
+
+                <label for="filter-quantity">สาเหตุ:</label>
+                <select id="filter-quantity-list" class="filter-select">
+                    <option value="" selected hidden>ทั้งหมด</option>
+                    <option value="">ล้อหลุด</option>
+                    <option value="">แก๊สออกซิเจนหมด</option>
                 </select>
-                <label for="filter-price">ช่วงราคา:</label>
-                <div class="filter-price-range">
-                    <input type="range" min="100000" max="1000000" value="0" class="slider" id="priceRange">
-                    <div class="value" id="value"></div>
-                </div>
+
                 <label for="equipment-filter">ประเภทอุปกรณ์:</label>
                 <select id="equipment-filter-list" class="filter-select">
-                    <option value="" selected hidden>ประเภทอุปกรณ์</option>
-                    <option value="fist">อุปกรณ์วัดและตรวจสุขภาพ</option>
-                    <option value="basic">อุปกรณ์ช่วยการเคลื่อนไหว</option>
-                    <option value="basic">อุปกรณ์สำหรับการฟื้นฟูและกายภาพบำบัด</option>
-                    <option value="basic">อุปกรณ์ดูแลสุขอนามัย</option>
-                    <option value="basic">อุปกรณ์ช่วยหายใจและระบบทางเดินหายใจ</option>
-                    <option value="basic">อุปกรณ์ปฐมพยาบาล</option>
+                    <option value="">ทั้งหมด</option>
+                    <option value="">อุปกรณ์วัดและตรวจสุขภาพ</option>
+                    <option value="">อุปกรณ์ช่วยการเคลื่อนไหว</option>
+                    <option value="">อุปกรณ์สำหรับการฟื้นฟูและกายภาพบำบัด</option>
+                    <option value="">อุปกรณ์ดูแลสุขอนามัย</option>
+                    <option value="">อุปกรณ์ช่วยหายใจและระบบทางเดินหายใจ</option>
+                    <option value="">อุปกรณ์ปฐมพยาบาล</option>
                 </select>
+
+                <label for="">วันที่ส่งคำขออนุมติ:</label>
+                <select id="" class="filter-select">
+                    <option value="">ทั้งหมด</option>
+                    <option value="">เก่าสุด-ล่าสุด</option>
+                    <option value="">ล่าสุด-เก่าสุด</option>
+                </select>
+
+                <label for="">สถานะการเคลม:</label>
+                <select id="" class="filter-select">
+                    <option value="">รอการอนุมัติ</option>
+                    <option value="">อนุมัติแล้ว</option>
+                    <option value="">ถูกปฏิเสธ</option>
+                </select>
+
             </div>
         </div>
-
     </div>
-    <select class="select" name="option" style="margin-left: 2%;" onchange="location = this.value;">
-        <option value="approve_page.html" selected>อนุมัติคำสั่งซื้อ</option>
-        <option value="approve_hire_page.html">อนุมัติการเช่า</option>
-    </select>
 
     <main class="main-content">
         <section class="approval-section">
@@ -92,10 +101,11 @@
                 <img src="img/o_1hn2oukpa1qdf16nr1nk3vk5bfgb.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า" class="equipment-image">
                 <div class="equipment-details">
                     <h2 class="equipment-title">เตียงผู้ป่วยแบบไฟฟ้า</h2>
-                    <p class="equipment-info">ชื่อผู้ซื้อ : นายศูนย์ นอนน้อย</p>
-                    <p class="equipment-info">จำนวน : 3</p>
-                    <p class="equipment-info">ราคา : 70,000 บาท</p>
-                    <p class="equipment-info">รวม : 210,000 บาท</p>
+                    <p class="equipment-info">ประเภทคำขอ : เคลม</p>
+                    <p class="equipment-info">วันที่ส่งคำขออนุมัติ : วันที่ 19 เดือน มรกาคม ปี 2568</p>
+                    <p class="equipment-info">ชื่อ : นายศูนย์รถ โบ้งบาง</p>
+                    <p class="equipment-info">จำนวน : 1</p>
+                    <p class="equipment-info">สาเหตุ : ล้อหลุด</p>
                 </div>
                 <div class="button-group">
                     <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติ</button>
@@ -105,25 +115,26 @@
 
             <div class="equipment-card">
                 <input type="checkbox" class="select-checkbox">
-                <img src="img/o_1hn2oukpa1qdf16nr1nk3vk5bfgb.jpg" alt="ถังแก๊สออกซิเจน" class="equipment-image">
+                <img src="img/original-1689327506685.png" alt="ถังแก๊สออกซิเจน" class="equipment-image">
                 <div class="equipment-details">
-                    <h2 class="equipment-title">เตียงผู้ป่วยแบบไฟฟ้า</h2>
-                    <p class="equipment-info">ชื่อผู้ซื้อ : นางสอง อยากนอน</p>
+                    <h2 class="equipment-title">ถังแก๊สออกซิเจน</h2>
+                    <p class="equipment-info">ประเภทคำขอ : ต่ออายุการใช้งาน</p>
+                    <p class="equipment-info">วันที่ส่งคำขออนุมัติ : วันที่ 21 เดือน มรกาคม ปี 2568</p>
+                    <p class="equipment-info">ชื่อ : นายหนึ่งรถ ตู้มต้าม</p>
                     <p class="equipment-info">จำนวน : 2</p>
-                    <p class="equipment-info">ราคา : 70,000 บาท</p>
-                    <p class="equipment-info">รวม : 140,000 บาท</p>
+                    <p class="equipment-info">สาเหตุ : แก๊สออกซิเจนหมด</p>
                 </div>
                 <div class="button-group">
                     <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติ</button>
                     <button class="btn btn-reject">ไม่อนุมัติ</button>
                 </div>
             </div>
-            <div class="button-group-2">
-                <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติที่เลือก</button>
-                <button class="btn btn-reject">ไม่อนุมัติ</button>
         </section>
+        <div class="button-group-2">
+            <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติที่เลือก</button>
+            <button class="btn btn-reject">ไม่อนุมัติ</button>
+        </div>
     </main>
-
     <script>
         // สคริปต์สำหรับเปิด-ปิด Sidebar
         document.addEventListener("DOMContentLoaded", () => {
@@ -149,16 +160,20 @@
             });
 
         });
-        // สคริปต์สำหรับแสดงค่าของ Slider
-        const slider = document.getElementById("priceRange");
-        const value = document.getElementById("value");
-
-        const updateValue = () => {
-            value.textContent = slider.value;
-        }
-
-        slider.oninput = updateValue;
-        updateValue();
+        // ตั้งค่าปฏิทิน Flatpickr
+        flatpickr("#calendarSelect", {
+            dateFormat: "Y-m",  // รูปแบบวันที่เป็น YYYY-MM
+            plugins: [
+                new monthSelectPlugin({
+                    shorthand: true,  // ใช้ชื่อย่อของเดือน
+                    dateFormat: "Y-m",  // รูปแบบวันที่
+                    altFormat: "F Y"  // รูปแบบการแสดงผลเป็น Full Month และ Year
+                })
+            ],
+            onChange: function (selectedDates, dateStr, instance) {
+                updateChart(dateStr);
+            }
+        });
     </script>
 </body>
 

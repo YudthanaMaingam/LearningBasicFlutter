@@ -29,34 +29,8 @@
     </header>
     <br>
 
-    <select class="select-month-his" name="" style="margin-left: 77%;">
-        <option value="">เดือน</option>
-        <option value="" selected>มกราคม</option>
-        <option value="">กุมภาพันธ์</option>
-        <option value="">มีนาคม</option>
-        <option value="">เมษายน</option>
-        <option value="">พฤษภาคม</option>
-        <option value="">มิถุนายน</option>
-        <option value="">กรกฎาคม</option>
-        <option value="">สิงหาคม</option>
-        <option value="">กันยายน</option>
-        <option value="">ตุลาคม</option>
-        <option value="">พฤศจิกายน</option>
-        <option value="">ธันวาคม</option>
-    </select>
-
-    <select class="select-year-his" name="" style="margin-left: 0%;">
-        <option value="">ปี</option>
-        <option value="">2024</option>
-        <option value="">2023</option>
-        <option value="">2022</option>
-        <option value="">2021</option>
-        <option value="">2020</option>
-        <option value="">2019</option>
-        <option value="" selected>2018</option>
-        <option value="">2017</option>
-        <option value="">2016</option>
-        <option value="">2015</option>
+    <select class="select-month-his" name="" style="margin-left: 1%;">
+        <option value="" selected hidden>รถพยาบาล/อุปกรณ์ทางการแพทย์</option>
     </select>
 
     <div class="header-his" style="margin-top:1rem">
@@ -66,26 +40,22 @@
         <section class="approval-section">
             <div class="equipment-card-his">
                 <div class="equipment-details">
-                    <img src="img/van-ambulance-vehicle-emergency-medical-services-toyota-commuter-abl-commu-alsv-wang-saphung-hospital-loei-carryboy.jpg" alt="" class="equipment-img-his">
-                    <br>
                     <h2 class="equipment-title" style="display:inline-block">ระดับรถ</h2>
                     <select class="select-level-his" name="option" style="margin-left: 2%;">
-                        <option value="">เลือกระดับรถ</option>
-                        <option value="" selected>Level 1</option>
+                        <option value="" selected>เลือกระดับรถ</option>
+                        <option value="">Level 1</option>
                         <option value="">Level 2</option>
                         <option value="">Level 3</option>
                     </select>
                     <br>
                     <h2 class="equipment-title" style="display:inline-block;">ทะเบียน</h2>
                     <select class="select-plate-his" name="option" style="margin-left: 2%;">
-                        <option value="">เลือกทะเบียน</option>
+                        <option value="" selected>เลือกทะเบียน</option>
                         <option value="">บล 1234 พิษณุโลก</option>
-                        <option value="" selected>ฟห 567 พิษณุโลก</option>
+                        <option value="">ฟห 567 พิษณุโลก</option>
                         <option value="">พฉ 789 พิษณุโลก</option>
                     </select>
-                    <h4 style="color:rgb(180, 4, 4);">หมายเหตุ : สายเบรคขาด, หลอดไฟแตก</h4>
                 </div>
-
             </div>
 
             <div class="header-his" style="margin-top:1rem">
@@ -94,12 +64,10 @@
             <section class="approval-section">
                 <div class="equipment-card-his">
                     <div class="equipment-details">
-                        <img src="img/o_1hn2oukpa1qdf16nr1nk3vk5bfgb.jpg" alt="" class="equipment-img-his">
-                        <br>
                         <h2 class="equipment-title" style="display:inline-block;">ประเภทอุปกรณ์</h2>
                         <select class="select-plate-his" name="option" style="margin-left: 2%;">
-                            <option value="">เลือกประเภท</option>
-                            <option value="" selected>ประเภทที่ 1</option>
+                            <option value="" selected>เลือกประเภท</option>
+                            <option value="">ประเภทที่ 1</option>
                             <option value="">ประเภทที่ 2</option>
                             <option value="">ประเภทที่ 3</option>
                         </select>
@@ -107,17 +75,17 @@
                         <h2 class="equipment-title" style="display:inline-block;">ชื่ออุปกรณ์</h2>
                         <select class="select-plate-his" name="option" style="margin-left: 4%;">
                             <option value="">เลือกอุปกรณ์</option>
-                            <option value="" selected>เตียงผู้ป่วยไฟฟ้า</option>
+                            <option value="">เตียงผู้ป่วยไฟฟ้า</option>
                             <option value="">อุปกรณ์ 2</option>
                             <option value="">อุปกรณ์ 3</option>
                         </select>
-                        <h4 style="color:rgb(180, 4, 4);">หมายเหตุ : ชำรุด</h4>
                     </div>
                 </div>
 
                 <div class="button-group-2">
-                    <button class="btn btn-approve">ยืนยัน</button>
-                    <button class="btn btn-reject"><a class="link-reset-btn" href="history_fixed_page.html">รีเซ็ต</a></button>
+                    <button class="btn btn-approve"><a class="link-search-btn"
+                            href="history_fixed_page_filter1.html">ยืนยัน</a></button>
+                    <button class="btn btn-reject">รีเซ็ต</button>
                 </div>
             </section>
     </main>

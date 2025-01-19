@@ -1,0 +1,111 @@
+body{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+header
+{
+    width: 0 auto;
+    max-width: 0 auto;
+    margin: 0 auto;
+}
+nav
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #D9F1FF;
+ 
+}
+ul
+{
+ position: Right ;
+}
+
+.ul-nav{
+    border: black solid 2px;
+    width: 40%;
+    height: 60%;
+}
+
+.img-items{
+    object-fit: fill;
+}
+
+h1 , h2 
+{
+    text-align: center;
+    color: black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    height: 90vh;
+    position: absolute;
+    /* top: 20px; */
+    left: 20px;
+}
+
+.reason label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.dropdown {
+    margin-bottom: 20px;
+     padding: 5px;
+    font-size: 16px;
+    .reason label {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+    
+    select {
+        padding: 5px;
+        font-size: 16px;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.approve {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.approve:hover {
+    background-color: #45a049;
+}
+
+.reject {
+    background-color: #f44336;
+    color: white;
+}
+
+.reject:hover {
+    background-color: #e53935;
+}

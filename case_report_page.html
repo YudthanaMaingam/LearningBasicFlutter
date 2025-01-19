@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    <title>สรุปยอดขาย</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+    <title>ดูรายงานเคส</title>
 </head>
 
 <body>
@@ -21,26 +27,34 @@
             <a href="approve_page.html" class="nav-item">อนุมัติคำสั่งซื้อ/เช่า</a>
             <a href="#" class="nav-item">อนุมัติเคลม</a>
             <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
-            <a href="car_report_page.html" class="nav-item">รายงานสภาพรถ</a>
-            <a href="case_report_page.html" class="nav-item active">รายงานเคส</a>
+            <!-- <a href="car_report_page.html" class="nav-item">รายงานสภาพรถ</a> -->
+            <a href="case_report_page.html" class="nav-item active">ดูรายงานเคส</a>
             <a href="history_fixed_page.html" class="nav-item">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
             <a href="static_car_page.html" class="nav-item">สถิติการใช้งานรถ</a>
         </nav>
     </header>
-
+    <h1 style="text-align: center;">ดูรายงานเคส</h1>
     <main class="main-content">
-        <section class="approval-section">
+        <div class="search-section">
+            <div class="filter-icon">
+                <i class="fa-solid fa-filter"></i> <!-- ไอคอน Filter -->
+            </div>
+
+            <div class="filter-sidebar" id="filterSidebar">
+                <div class="sidebar-header">
+                    <h2>ตัวกรอง</h2>
+                    <button class="close-sidebar">&times;</button>
+                </div>
+                <div class="sidebar-content">
+                     <!-- ใส่ Filter ตรงนี้ --> 
+                </div>
+            </div>
+        </div>
+        <!-- <section class="approval-section">
             <div class="equipment-card-case_report">
                 <div class="equipment-details">
 
-                    <input type="checkbox" class="checkbox-summary-services">
-                    <label class="label-text-summary-services">เคสฉุกเฉิน</label>
-
-                    <input type="checkbox" class="checkbox-summary-services">
-                    <label class="label-text-summary-services">เคสรับส่งผู้ป่วย</label>
-
-                    <input type="checkbox" class="checkbox-summary-services">
-                    <label class="label-text-summary-services">EVENT</label>
+                    <label class="label-text-summary-services">รายงานเคสฉุกเฉิน</label>
 
                     <select class="select-month-summary" name="" id="">
                         <option value="" selected>เดือน</option>
@@ -83,21 +97,50 @@
                         <option value="">เบาหวาน</option>
                         <option value="">โรคถุงลมโป่งพอง</option>
                     </select>
-
-                    <select class="select-province-summary" name="" id="">
-                        <option value="" selected>การแพ้ยา</option>
-                        <option value="">แพ้</option>
-                        <option value="">ไม่แพ้</option>
-                    </select>
                     <button type="submit" class="btnv2 btn-search-summary"> <a class="link-search-btn" href="summary_page_filter1.html">ค้นหา</a></button>
                     <button type="reset" class="btnv2 btn-reset-summary">รีเซ็ต</button>
                 </div>
 
             </div>
-        </section>
-    </main>
+        </section> -->
     </main>
 
+    <script>
+        // สคริปต์สำหรับเปิด-ปิด Sidebar
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterIcon = document.querySelector(".filter-icon");
+            const sidebar = document.getElementById("filterSidebar");
+            const closeSidebar = document.querySelector(".close-sidebar");
+
+            // เปิด Sidebar
+            filterIcon.addEventListener("click", () => {
+                sidebar.classList.add("open");
+            });
+
+            // ปิด Sidebar
+            closeSidebar.addEventListener("click", () => {
+                sidebar.classList.remove("open");
+            });
+
+            // ปิด Sidebar เมื่อคลิกนอก Sidebar
+            document.addEventListener("click", (e) => {
+                if (!sidebar.contains(e.target) && !filterIcon.contains(e.target)) {
+                    sidebar.classList.remove("open");
+                }
+            });
+
+        });
+        // สคริปต์สำหรับแสดงค่าของ Slider
+        const slider = document.getElementById("priceRange");
+        const value = document.getElementById("value");
+
+        const updateValue = () => {
+            value.textContent = slider.value;
+        }
+
+        slider.oninput = updateValue;
+        updateValue();
+    </script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>อนุมัติคำสั่งซื้อ/เช่า</title>
 </head>
 
@@ -21,7 +22,7 @@
             <a href="#" class="nav-item active">อนุมัติคำสั่งซื้อ/เช่า</a>
             <a href="#" class="nav-item">อนุมัติเคลม</a>
             <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
-            <a href="car_report_page.html" class="nav-item">รายงานสภาพรถ</a>
+            <!-- <a href="car_report_page.html" class="nav-item">รายงานสภาพรถ</a> -->
             <a href="case_report_page.html" class="nav-item">รายงานเคส</a>
             <a href="history_fixed_page.html" class="nav-item">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
             <a href="static_car_page.html" class="nav-item">สถิติการใช้งานรถ</a>
@@ -29,16 +30,60 @@
     </header>
     <br>
 
+    <div class="search-section">
+        <div class="search-container">
+            <input type="text" placeholder="ค้นหา..." class="search-input">
+            <button class="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i> <!-- ไอคอนแว่นขยาย -->
+            </button>
+        </div>
+        <div class="filter-icon">
+            <i class="fa-solid fa-filter"></i> <!-- ไอคอน Filter -->
+        </div>
+
+        <div class="filter-sidebar" id="filterSidebar">
+            <div class="sidebar-header">
+                <h2>ตัวกรอง</h2>
+                <button class="close-sidebar">&times;</button>
+            </div>
+            <div class="sidebar-content">
+                <label for="filter-quantity">จำนวน:</label>
+                <select id="filter-quantity-list" class="filter-select">
+                    <option value="" selected hidden>ทั้งหมด</option>
+                    <option value="ambulance">น้อยสุด-มากสุด</option>
+                    <option value="event">มากสุด-น้อยสุด</option>
+                </select>
+                <label for="">ค่ามัดจำ:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected hidden>ทั้งหมด</option>
+                    <option value="">น้อยสุด-มากสุด</option>
+                    <option value="">มากสุด-น้อยสุด</option>
+                </select>
+
+                <label for="equipment-filter">ประเภทอุปกรณ์:</label>
+                <select id="equipment-filter-list" class="filter-select">
+                    <option value="">ทั้งหมด</option>
+                    <option value="">อุปกรณ์วัดและตรวจสุขภาพ</option>
+                    <option value="">อุปกรณ์ช่วยการเคลื่อนไหว</option>
+                    <option value="">อุปกรณ์สำหรับการฟื้นฟูและกายภาพบำบัด</option>
+                    <option value="">อุปกรณ์ดูแลสุขอนามัย</option>
+                    <option value="">อุปกรณ์ช่วยหายใจและระบบทางเดินหายใจ</option>
+                    <option value="">อุปกรณ์ปฐมพยาบาล</option>
+                </select>
+
+                <label for="">วันที่ส่งคำขออนุมติ:</label>
+                <select id="" class="filter-select">
+                    <option value="">ทั้งหมด</option>
+                    <option value="">เก่าสุด-ล่าสุด</option>
+                    <option value="">ล่าสุด-เก่าสุด</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
     <select class="select" name="option" style="margin-left: 2%;" onchange="location = this.value;">
         <option value="approve_page.html">อนุมัติคำสั่งซื้อ</option>
         <option value="approve_hire_page.html" selected>อนุมัติการเช่า</option>
-    </select>
-
-    <label for="quantity" style="margin-left: 2%;">จำนวน : </label>
-    <select class="select" name="quantity" style="margin-left: 0%;" onchange="location = this.value;">
-        <option value="approve_hire_page.html" selected>ทั้งหมด</option>
-        <option value="#">น้อยสุด-มากสุด</option>
-        <option value="#">มากสุด-น้อยสุด</option>
     </select>
 
     <main class="main-content">
@@ -80,6 +125,46 @@
             <button class="btn btn-reject">ไม่อนุมัติ</button>
         </div>
     </main>
+    <script>
+        // สคริปต์สำหรับเปิด-ปิด Sidebar
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterIcon = document.querySelector(".filter-icon");
+            const sidebar = document.getElementById("filterSidebar");
+            const closeSidebar = document.querySelector(".close-sidebar");
+
+            // เปิด Sidebar
+            filterIcon.addEventListener("click", () => {
+                sidebar.classList.add("open");
+            });
+
+            // ปิด Sidebar
+            closeSidebar.addEventListener("click", () => {
+                sidebar.classList.remove("open");
+            });
+
+            // ปิด Sidebar เมื่อคลิกนอก Sidebar
+            document.addEventListener("click", (e) => {
+                if (!sidebar.contains(e.target) && !filterIcon.contains(e.target)) {
+                    sidebar.classList.remove("open");
+                }
+            });
+
+        });
+        // ตั้งค่าปฏิทิน Flatpickr
+        flatpickr("#calendarSelect", {
+            dateFormat: "Y-m",  // รูปแบบวันที่เป็น YYYY-MM
+            plugins: [
+                new monthSelectPlugin({
+                    shorthand: true,  // ใช้ชื่อย่อของเดือน
+                    dateFormat: "Y-m",  // รูปแบบวันที่
+                    altFormat: "F Y"  // รูปแบบการแสดงผลเป็น Full Month และ Year
+                })
+            ],
+            onChange: function (selectedDates, dateStr, instance) {
+                updateChart(dateStr);
+            }
+        });
+    </script>
 </body>
 
 </html>
